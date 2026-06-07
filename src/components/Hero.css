@@ -1,0 +1,143 @@
+.hero-section {
+  min-height: 100vh;
+  background: #FBF0EE;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 120px 200px;
+}
+
+/* ── Headline ── */
+.hero-headline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(68px, 9.5vw, 138px);
+  line-height: 0.96;
+  letter-spacing: -4px;
+  color: #0F0F1A;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  margin: 0;
+}
+
+/* ── Decorations base — position handled entirely by JS INITIAL_POSITIONS ── */
+.deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.deco img {
+  pointer-events: none;
+  display: block;
+}
+
+/* Eye sticker */
+.deco-eye {
+  width: clamp(108px, 11vw, 162px);
+  z-index: 3;
+}
+
+/* "Empatia" navy pill */
+.deco-empatia {
+  display: flex;
+  width: 184px;
+  height: 80px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 64px;
+  border: 1px dashed #F8B8AF;
+  background: #01408D;
+  color: #F8B8AF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 4;
+}
+
+/* Star */
+.deco-star {
+  width: 77px;
+  height: 77px;
+  z-index: 3;
+}
+
+/* Cat */
+.deco-cat {
+  width: 69px;
+  height: 73px;
+  z-index: 3;
+}
+
+/* Orange dot */
+.deco-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #E84C2A;
+  z-index: 3;
+}
+
+/* "Product" pink badge */
+.deco-product {
+  display: flex;
+  width: 179px;
+  height: 67px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 34px;
+  border: 1px dashed #E75234;
+  background: #F8B8AF;
+  color: #E75234;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 4;
+}
+
+/* ── Bottom wave ── */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(80px, 10vw, 130px);
+  display: block;
+  width: 100%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-stage {
+    padding: 100px 40px 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stage {
+    padding: 100px 24px 160px;
+  }
+  .hero-headline {
+    letter-spacing: -2px;
+  }
+  .deco-empatia {
+    font-size: 16px;
+  }
+}

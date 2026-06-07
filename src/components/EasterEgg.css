@@ -1,0 +1,14 @@
+.easter-egg {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: egg-pop 3s ease forwards;
+}
+
+@keyframes egg-pop {
+  0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+  18%  { opacity: 1; transform: scale(1.15) rotate(4deg);  }
+  28%  { opacity: 1; transform: scale(1)    rotate(0deg);   }
+  72%  { opacity: 1; transform: scale(1)    rotate(0deg);   }
+  100% { opacity: 0; transform: scale(0.7)  rotate(8deg);  }
+}

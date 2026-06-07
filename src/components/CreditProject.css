@@ -1,0 +1,14 @@
+/* CreditProject usa los mismos colores que Nummi — no se necesitan overrides */
+
+.credit-entrega-img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 40px auto 0;
+}
+
+@media (max-width: 640px) {
+  .credit-entrega-img {
+    width: 100%;
+  }
+}

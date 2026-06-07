@@ -1,0 +1,183 @@
+/* ─── Mi Historia ─────────────────────────── */
+.historia-section {
+  padding: 80px 40px;
+  background: #FBF0EE;
+  position: relative;
+}
+
+.historia-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Two-column layout ── */
+.historia-layout {
+  display: grid;
+  grid-template-columns: 0.65fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ── Floating decos ── */
+.historia-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.historia-deco img {
+  pointer-events: none;
+  display: block;
+}
+
+.historia-deco-eye-img {
+  width: 70px;
+  height: auto;
+}
+
+.historia-deco-star-img {
+  width: 33px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.historia-badge-uxui {
+  display: inline-flex;
+  padding: 9px 26px;
+  border-radius: 100px;
+  background: #01408D;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.historia-badge-cx {
+  display: inline-flex;
+  padding: 7px 22px;
+  border-radius: 8px;
+  background: #F8B8AF;
+  color: #E75234;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* ────────── LEFT COLUMN ────────── */
+.historia-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 130px;
+}
+
+.historia-titulo {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(52px, 8vw, 90px);
+  font-weight: 900;
+  color: #0F0F1A;
+  line-height: 0.93;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+/* Bio text */
+.historia-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.historia-bio p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Tools */
+.historia-tools-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #E75234;
+  margin: 0 0 16px 0;
+}
+
+.historia-tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.historia-tool-img {
+  width: 73px;
+  height: 73px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ────────── RIGHT COLUMN ────────── */
+.historia-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.historia-photo-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+.historia-photo-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.historia-photo-caption {
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0F0F1A;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .historia-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .historia-section {
+    padding: 60px 20px;
+  }
+
+  .historia-titulo {
+    font-size: clamp(44px, 12vw, 72px);
+    letter-spacing: -2px;
+  }
+
+  .historia-photos-grid {
+    grid-template-columns: 1fr;
+  }
+}

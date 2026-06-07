@@ -1,0 +1,113 @@
+/* ─── Call Me ─────────────────────────── */
+.callme-section {
+  background: #E84C2A;
+  padding: 100px 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+}
+
+.callme-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Título ── */
+.callme-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+/* ── Botones ── */
+.callme-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.callme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  border-radius: 100px;
+  background: #01408D;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-width: 200px;
+}
+
+.callme-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(1, 64, 141, 0.4);
+  background: #012f6b;
+}
+
+/* ── Estrellas decorativas ── */
+.callme-star {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.callme-star-1 {
+  width: 44px;
+  top: 60px;
+  left: 60px;
+}
+
+.callme-star-2 {
+  width: 60px;
+  top: 50px;
+  right: 80px;
+}
+
+.callme-star-3 {
+  width: 36px;
+  bottom: 60px;
+  right: 38%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .callme-section {
+    padding: 80px 32px;
+  }
+
+  .callme-title {
+    letter-spacing: -2px;
+  }
+
+  .callme-btn {
+    min-width: 160px;
+    padding: 14px 36px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .callme-buttons {
+    flex-direction: column;
+  }
+
+  .callme-btn {
+    width: 100%;
+  }
+}

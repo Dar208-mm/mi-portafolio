@@ -1,0 +1,137 @@
+/* ─────────────────────────────────────────────────────────
+   DuolingoProject — Color overrides scoped to #project-duolingo
+   All structural rules live in Projects.css (imported by
+   DuolingoProject.jsx) so no layout CSS is duplicated here.
+───────────────────────────────────────────────────────── */
+
+/* ── Header & methodology block ── */
+#project-duolingo .nummi-project {
+  background: #01408D;
+}
+
+#project-duolingo .nummi-block {
+  background: #01408D;
+}
+
+/* ── Phase blocks ── */
+#project-duolingo .phase-block {
+  background: #EEF4FF;
+}
+
+#project-duolingo .nummi-block.alt-bg {
+  background: #EEF4FF;
+}
+
+/* ── Deliver section ── */
+#project-duolingo .nummi-deliver {
+  background: #EEF4FF;
+}
+
+/* ── Tags ── */
+#project-duolingo .nummi-tag {
+  background: #C8DEFF;
+  color: #01408D;
+}
+
+/* ── Phase labels & descriptions ── */
+#project-duolingo .phase-label {
+  color: #01408D;
+}
+
+#project-duolingo .phase-label strong {
+  color: #01408D;
+}
+
+/* ── Cards ── */
+#project-duolingo .nummi-card {
+  border-color: #01408D;
+  background: #F5F8FF;
+}
+
+/* ── Solution post-its ── */
+#project-duolingo .solution-card:nth-child(1) { background-color: #01408D; }
+#project-duolingo .solution-card:nth-child(2) { background-color: #FFC7BC; }
+#project-duolingo .solution-card:nth-child(3) { background-color: #E84C2A; }
+#project-duolingo .solution-card:nth-child(4) { background-color: #C8DEFF; }
+
+#project-duolingo .solution-card:nth-child(1) p { color: #FFFFFF; }
+#project-duolingo .solution-card:nth-child(2) p { color: #0F0F1A; }
+#project-duolingo .solution-card:nth-child(3) p { color: #FFFFFF; }
+#project-duolingo .solution-card:nth-child(4) p { color: #01408D; }
+
+/* ────────────────────────────────────────────────────────
+   Placeholders — replace these with real assets when ready
+──────────────────────────────────────────────────────── */
+
+/* Flow image */
+.dl-flow-img {
+  width: clamp(257px, 54.3vw, 368px);
+  height: auto;
+  display: block;
+  filter: none;
+}
+
+/* Duolingo wordmark */
+.dl-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dl-logo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: #FFFFFF;
+  text-transform: lowercase;
+}
+
+.dl-elementos-placeholder {
+  width: min(469px, 90%);
+  height: auto;
+  display: block;
+}
+
+/* Phone mockup — replace with real screenshot */
+.dl-phone-placeholder {
+  width: clamp(220px, 28vw, 340px);
+  height: clamp(400px, 52vw, 560px);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 36px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.dl-methodology-placeholder {
+  flex: 0 0 577px;
+  max-width: 577px;
+  height: auto;
+  display: block;
+}
+
+/* Deliver screens — replace with final UI screens image */
+.dl-entrega-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .dl-methodology-placeholder {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dl-flow-img {
+    width: 100%;
+    max-width: 368px;
+  }
+
+  .dl-elementos-placeholder {
+    width: 100%;
+  }
+}
