@@ -590,8 +590,9 @@
     padding-bottom: 0;
   }
 
+  /* metodología: más padding inferior para que el clip-path no corte la imagen */
   .nummi-block {
-    padding: 56px 40px;
+    padding: 56px 40px 180px;
   }
 
   /* block-content: remove side padding — nummi-block already provides it */
@@ -602,6 +603,7 @@
   }
 
   .doble-diamante-img {
+    width: 100%;
     max-width: 100%;
   }
 
@@ -653,7 +655,7 @@
   }
 
   .nummi-block {
-    padding: 48px 24px;
+    padding: 48px 24px 160px;
   }
 
   .nummi-block.phase-block {

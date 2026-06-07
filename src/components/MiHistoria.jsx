@@ -84,12 +84,16 @@ export default function MiHistoria() {
     return () => el.removeEventListener('mousemove', handleMouseMove)
   }, [handleMouseMove])
 
-  /* Drag global */
+  /* Drag global — mouse + touch */
   useEffect(() => {
+    const getClient = (e) => e.touches ? e.touches[0] : e
+
     const onMove = (e) => {
       if (!draggingRef.current) return
+      if (e.cancelable) e.preventDefault()
+      const { clientX, clientY } = getClient(e)
       const { id, startX, startY, origX, origY } = draggingRef.current
-      const next = { x: origX + e.clientX - startX, y: origY + e.clientY - startY }
+      const next = { x: origX + clientX - startX, y: origY + clientY - startY }
       posRef.current = { ...posRef.current, [id]: next }
       setPositions({ ...posRef.current })
     }
@@ -99,16 +103,21 @@ export default function MiHistoria() {
     }
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mouseup', onUp)
+    window.addEventListener('touchmove', onMove, { passive: false })
+    window.addEventListener('touchend', onUp)
     return () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseup', onUp)
+      window.removeEventListener('touchmove', onMove)
+      window.removeEventListener('touchend', onUp)
     }
   }, [])
 
   const startDrag = (id) => (e) => {
     e.preventDefault()
+    const { clientX, clientY } = e.touches ? e.touches[0] : e
     const cur = posRef.current[id]
-    draggingRef.current = { id, startX: e.clientX, startY: e.clientY, origX: cur.x, origY: cur.y }
+    draggingRef.current = { id, startX: clientX, startY: clientY, origX: cur.x, origY: cur.y }
     setActiveId(id)
   }
 
@@ -130,19 +139,19 @@ export default function MiHistoria() {
     <section id="historia" className="historia-section" ref={secRef}>
 
       {/* ── Elementos flotantes ── */}
-      <div className="historia-deco" onMouseDown={startDrag('eye')} style={s('eye', -28, -20)}>
+      <div className="historia-deco" onMouseDown={startDrag('eye')} onTouchStart={startDrag('eye')} style={s('eye', -28, -20)}>
         <img src={eyeSticker} alt="" draggable="false" className="historia-deco-eye-img" />
       </div>
 
-      <div className="historia-deco historia-badge-uxui" onMouseDown={startDrag('uxui')} style={s('uxui', 40, 26)}>
+      <div className="historia-deco historia-badge-uxui" onMouseDown={startDrag('uxui')} onTouchStart={startDrag('uxui')} style={s('uxui', 40, 26)}>
         UX-UI
       </div>
 
-      <div className="historia-deco historia-badge-cx" onMouseDown={startDrag('cx')} style={s('cx', -18, 32, ' rotate(-8deg)')}>
+      <div className="historia-deco historia-badge-cx" onMouseDown={startDrag('cx')} onTouchStart={startDrag('cx')} style={s('cx', -18, 32, ' rotate(-8deg)')}>
         CX
       </div>
 
-      <div className="historia-deco" onMouseDown={startDrag('star')} style={s('star', 22, -18)}>
+      <div className="historia-deco" onMouseDown={startDrag('star')} onTouchStart={startDrag('star')} style={s('star', 22, -18)}>
         <img src={starSticker} alt="" draggable="false" className="historia-deco-star-img" />
       </div>
 

@@ -60,12 +60,16 @@ export default function Hero() {
     return () => el.removeEventListener('mousemove', handleMouseMove)
   }, [handleMouseMove])
 
-  /* Global drag move / release */
+  /* Global drag move / release — mouse + touch */
   useEffect(() => {
+    const getClient = (e) => e.touches ? e.touches[0] : e
+
     const onMove = (e) => {
       if (!draggingRef.current) return
+      if (e.cancelable) e.preventDefault()
+      const { clientX, clientY } = getClient(e)
       const { id, startX, startY, origX, origY } = draggingRef.current
-      const next = { x: origX + e.clientX - startX, y: origY + e.clientY - startY }
+      const next = { x: origX + clientX - startX, y: origY + clientY - startY }
       posRef.current = { ...posRef.current, [id]: next }
       setPositions({ ...posRef.current })
     }
@@ -77,17 +81,22 @@ export default function Hero() {
 
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mouseup', onUp)
+    window.addEventListener('touchmove', onMove, { passive: false })
+    window.addEventListener('touchend', onUp)
     return () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseup', onUp)
+      window.removeEventListener('touchmove', onMove)
+      window.removeEventListener('touchend', onUp)
     }
   }, [])
 
-  /* Start drag on mousedown */
+  /* Start drag — mouse + touch */
   const startDrag = (id) => (e) => {
     e.preventDefault()
+    const { clientX, clientY } = e.touches ? e.touches[0] : e
     const cur = posRef.current[id]
-    draggingRef.current = { id, startX: e.clientX, startY: e.clientY, origX: cur.x, origY: cur.y }
+    draggingRef.current = { id, startX: clientX, startY: clientY, origX: cur.x, origY: cur.y }
     setActiveId(id)
   }
 
@@ -114,16 +123,16 @@ export default function Hero() {
     >
       <div className="hero-stage">
 
-        <div className="deco deco-eye" onMouseDown={startDrag('eye')} style={s('eye', -32, -24)}>
+        <div className="deco deco-eye" onMouseDown={startDrag('eye')} onTouchStart={startDrag('eye')} style={s('eye', -32, -24)}>
           <img src={eyeSticker} alt="" draggable="false" />
         </div>
 
-        <div className="deco deco-empatia" onMouseDown={startDrag('empatia')}
+        <div className="deco deco-empatia" onMouseDown={startDrag('empatia')} onTouchStart={startDrag('empatia')}
           style={s('empatia', 44, 30, ' rotate(23.743deg)')}>
           Empatía
         </div>
 
-        <div className="deco deco-star" onMouseDown={startDrag('star')} style={s('star', -20, 22)}>
+        <div className="deco deco-star" onMouseDown={startDrag('star')} onTouchStart={startDrag('star')} style={s('star', -20, 22)}>
           <img src={starSticker} alt="" draggable="false" />
         </div>
 
@@ -133,13 +142,13 @@ export default function Hero() {
           diseño
         </h1>
 
-        <div className="deco deco-cat" onMouseDown={startDrag('cat')} style={s('cat', 40, -20)}>
+        <div className="deco deco-cat" onMouseDown={startDrag('cat')} onTouchStart={startDrag('cat')} style={s('cat', 40, -20)}>
           <img src={catSticker} alt="" draggable="false" />
         </div>
 
-        <div className="deco deco-dot" onMouseDown={startDrag('dot')} style={s('dot', 18, 34)} />
+        <div className="deco deco-dot" onMouseDown={startDrag('dot')} onTouchStart={startDrag('dot')} style={s('dot', 18, 34)} />
 
-        <div className="deco deco-product" onMouseDown={startDrag('product')}
+        <div className="deco deco-product" onMouseDown={startDrag('product')} onTouchStart={startDrag('product')}
           style={s('product', -38, 24, ' rotate(-8.776deg)')}>
           Product
         </div>
