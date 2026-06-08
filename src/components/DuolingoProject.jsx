@@ -44,9 +44,9 @@ export default function DuolingoProject() {
 
         <div className="nummi-project-top">
           <div className="dl-logo-placeholder">
-            <span className="dl-logo-text">duolingo</span>
+            <span className="dl-logo-text">Lingo Flow</span>
           </div>
-          <img src={frame56} alt="Duolingo elementos" className="dl-elementos-placeholder" />
+          <img src={frame56} alt="Lingo Flow elementos" className="dl-elementos-placeholder" />
         </div>
 
         <div className="nummi-project-body">
@@ -68,7 +68,7 @@ export default function DuolingoProject() {
           </div>
 
           <div className="nummi-project-right">
-            <img src={duolingoFlow} alt="Duolingo flow" className="dl-flow-img" />
+            <img src={duolingoFlow} alt="Lingo Flow flow" className="dl-flow-img" />
           </div>
 
         </div>
@@ -87,7 +87,7 @@ export default function DuolingoProject() {
               Metodología usada:<br /><strong>Design Thinking</strong>
             </h3>
           </div>
-          <img src={lingeMet} alt="Metodología Duolingo" className="dl-methodology-placeholder" />
+          <img src={lingeMet} alt="Metodología Lingo Flow" className="dl-methodology-placeholder" />
         </div>
         <div className="deco deco-star block-star-bottom"><img src={starSticker} alt="" /></div>
       </div>
@@ -138,7 +138,7 @@ export default function DuolingoProject() {
           occupation="Profesora"
           comportamiento={[
             'Enseña español en un colegio de Berlín y necesita el inglés para comunicarse con colegas y padres extranjeros.',
-            'Usa Duolingo en sus ratos libres pero siente que no logra fluidez real para conversaciones profesionales.',
+            'Usa Lingo Flow en sus ratos libres pero siente que no logra fluidez real para conversaciones profesionales.',
           ]}
           frustraciones={[
             'Se bloquea al hablar inglés en reuniones de trabajo frente a sus colegas nativos.',
@@ -206,7 +206,7 @@ export default function DuolingoProject() {
           <strong>Entrega</strong>
         </h3>
         <div className="deliver-screens">
-          <img src={duolingoEntrega} alt="Entrega Duolingo" className="dl-entrega-img" />
+          <img src={duolingoEntrega} alt="Entrega Lingo Flow" className="dl-entrega-img" />
         </div>
       </div>
 
