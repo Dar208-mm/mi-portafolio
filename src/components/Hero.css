@@ -123,6 +123,22 @@
   width: 100%;
 }
 
+/* ── Float animation en touch (reemplaza el parallax de mouse) ── */
+@keyframes deco-float {
+  0%, 100% { translate: 0 0px; }
+  50%       { translate: 0 -14px; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .deco { animation: deco-float 4s ease-in-out infinite; }
+  .deco-eye     { animation-duration: 3.6s; animation-delay:  0s;    }
+  .deco-empatia { animation-duration: 4.2s; animation-delay: -1.3s;  }
+  .deco-star    { animation-duration: 3.9s; animation-delay: -2.1s;  }
+  .deco-cat     { animation-duration: 4.5s; animation-delay: -0.7s;  }
+  .deco-dot     { animation-duration: 3.2s; animation-delay: -1.8s;  }
+  .deco-product { animation-duration: 4.1s; animation-delay: -3.0s;  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-stage {
