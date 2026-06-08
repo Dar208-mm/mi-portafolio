@@ -639,6 +639,11 @@
     grid-template-columns: 1fr;
   }
 
+  .phase-cards .nummi-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .solution-grid {
     grid-template-columns: repeat(2, 1fr);
   }

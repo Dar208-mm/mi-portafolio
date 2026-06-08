@@ -127,8 +127,8 @@
 
 @media (max-width: 640px) {
   .dl-flow-img {
-    width: 100%;
-    max-width: 368px;
+    width: clamp(240px, 30vw, 350px);
+    max-width: 350px;
   }
 
   .dl-elementos-placeholder {

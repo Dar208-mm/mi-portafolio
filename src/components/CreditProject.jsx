@@ -120,7 +120,7 @@ export default function CreditProject() {
           image={luisPersona}
           name="Luís Montero"
           age="27 años"
-          location="Vive sola en la ciudad"
+          location="Vive solo en la ciudad"
           maritalStatus="Soltero"
           occupation="Moderado"
           occupationLabel="Nivel de ingresos"
